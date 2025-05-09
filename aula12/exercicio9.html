@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Contar Vogais</title>
+</head>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+    }
+    #resultado {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+<body>
+  <h1>Contar Vogais em uma Palavra</h1>
+  <button onclick="contarVogais()">Contar</button>
+  <div id="resultado" style="margin-top: 20px; font-family: Arial;"></div>
+
+  <script>
+    function contarVogais() {
+      let palavra = prompt("Digite uma palavra:");
+
+      if (!palavra) {
+        alert("Por favor, digite uma palavra.");
+        return;
+      }
+
+      let vogais = palavra.match(/[aeiouáéíóúàèìòùãõâêîôû]/gi);
+      let total = vogais ? vogais.length : 0;
+
+      document.getElementById("resultado").innerHTML =
+        `<h2>Palavra:</h2> ${palavra}<br><h2>Total de vogais:</h2> ${total}`;
+    }
+  </script>
+</body>
+</html>
