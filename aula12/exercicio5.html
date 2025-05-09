@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Contar até N</title>
+  <title>Inverter Palavra</title>
 </head>
 <style>
     body {
@@ -19,27 +19,24 @@
       font-size: 20px;
       font-weight: bold;
     }
-  </style
+  </style>
 <body>
-  <h1>Contador até N</h1>
-  <button onclick="contarAteN()">Contar</button>
+  <h1>Inverter uma Palavra</h1>
+  <button onclick="inverterPalavra()">Inverter</button>
   <div id="resultado" style="margin-top: 20px; font-family: Arial;"></div>
 
   <script>
-    function contarAteN() {
-      let n = parseInt(prompt("Digite um número:"));
+    function inverterPalavra() {
+      let palavra = prompt("Digite uma palavra:");
 
-      if (isNaN(n) || n < 1) {
-        alert("Digite um número válido (maior ou igual a 1)!");
+      if (!palavra) {
+        alert("Por favor, digite uma palavra.");
         return;
       }
 
-      let resultadoDiv = document.getElementById("resultado");
-      resultadoDiv.innerHTML = "<h2>Contagem:</h2>";
-
-      for (let i = 1; i <= n; i++) {
-        resultadoDiv.innerHTML += i + "<tr>, ";
-      }
+      let invertida = palavra.split('').reverse().join('');
+      document.getElementById("resultado").innerHTML =
+        `<h2>Palavra invertida:</h2> ${invertida}`;
     }
   </script>
 </body>

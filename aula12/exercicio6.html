@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Maior Número da Lista</title>
+</head>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+    }
+    #resultado {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+<body>
+  <h1>Maior Número</h1>
+  <button onclick="encontrarMaior()">Encontrar Maior</button>
+  <div id="resultado" style="margin-top: 20px; font-family: Arial;"></div>
+
+  <script>
+    function encontrarMaior() {
+      let entrada = prompt("Digite os números separados por vírgula (ex: 4, 10, 7, 3):");
+
+      if (!entrada) {
+        alert("Digite pelo menos um número.");
+        return;
+      }
+
+      let numeros = entrada.split(',').map(num => parseFloat(num.trim()));
+
+      if (numeros.some(isNaN)) {
+        alert("Por favor, digite apenas números válidos.");
+        return;
+      }
+
+      let maior = Math.max(...numeros);
+
+      document.getElementById("resultado").innerHTML =
+        `<h2>Maior número:</h2> ${maior}`;
+    }
+  </script>
+</body>
+</html>
