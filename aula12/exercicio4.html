@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Soma até 0</title>
+</head>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+    }
+    #resultado {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+<body>
+  <h1>Soma de Números</h1>
+  <button onclick="somarNumeros()">Iniciar Soma</button>
+  <div id="resultado" style="margin-top: 20px; font-family: Arial;"></div>
+
+  <script>
+    function somarNumeros() {
+      let soma = 0;
+      let numero;
+
+      do {
+        numero = parseFloat(prompt("Digite um número (0 para parar):"));
+        if (!isNaN(numero)) {
+          soma += numero;
+        } else {
+          alert("Por favor, digite um número válido.");
+        }
+      } while (numero !== 0);
+
+      document.getElementById("resultado").innerHTML =
+        `<h2>Soma total: ${soma}</h2>`;
+    }
+  </script>
+</body>
+</html>
